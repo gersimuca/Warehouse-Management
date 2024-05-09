@@ -1,0 +1,85 @@
+2024-05-09T16:40:56.647+02:00  INFO 10600 --- [virtual-dossier] [main] c.g.W.M.WarehouseManagementApplication   : Starting WarehouseManagementApplication using Java 21.0.2 with PID 10600 (C:\Users\Gersi Muca\Desktop\Warehouse-Management\target\classes started by Gersi Muca in C:\Users\Gersi Muca\Desktop\Warehouse-Management)
+2024-05-09T16:40:56.649+02:00  INFO 10600 --- [virtual-dossier] [main] c.g.W.M.WarehouseManagementApplication   : The following 1 profile is active: "dev"
+2024-05-09T16:40:57.317+02:00  INFO 10600 --- [virtual-dossier] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09T16:40:57.371+02:00  INFO 10600 --- [virtual-dossier] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2024-05-09T16:40:57.950+02:00  INFO 10600 --- [virtual-dossier] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-05-09T16:40:58.137+02:00  INFO 10600 --- [virtual-dossier] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-09T16:40:58.137+02:00  INFO 10600 --- [virtual-dossier] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09T16:40:58.228+02:00  INFO 10600 --- [virtual-dossier] [main] o.a.c.c.C.[.[localhost].[/rest-api]      : Initializing Spring embedded WebApplicationContext
+2024-05-09T16:40:58.228+02:00  INFO 10600 --- [virtual-dossier] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1535 ms
+2024-05-09T16:40:58.388+02:00  INFO 10600 --- [virtual-dossier] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09T16:40:58.427+02:00  INFO 10600 --- [virtual-dossier] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09T16:40:58.458+02:00  INFO 10600 --- [virtual-dossier] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-09T16:40:58.635+02:00  INFO 10600 --- [virtual-dossier] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09T16:40:58.658+02:00  INFO 10600 --- [virtual-dossier] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-09T16:40:58.778+02:00  INFO 10600 --- [virtual-dossier] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e44cb34
+2024-05-09T16:40:58.779+02:00  INFO 10600 --- [virtual-dossier] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-09T16:40:58.803+02:00  WARN 10600 --- [virtual-dossier] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09T16:40:59.646+02:00  INFO 10600 --- [virtual-dossier] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09T16:40:59.665+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.665+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "delivery" does not exist, skipping
+2024-05-09T16:40:59.667+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.667+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "delivery" does not exist, skipping
+2024-05-09T16:40:59.668+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.668+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "item" does not exist, skipping
+2024-05-09T16:40:59.669+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.669+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order" does not exist, skipping
+2024-05-09T16:40:59.670+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.670+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "delivery" does not exist, skipping
+2024-05-09T16:40:59.671+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.671+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "item" does not exist, skipping
+2024-05-09T16:40:59.672+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.672+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order" does not exist, skipping
+2024-05-09T16:40:59.673+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.673+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "truck" does not exist, skipping
+2024-05-09T16:40:59.674+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-09T16:40:59.674+02:00  WARN 10600 --- [virtual-dossier] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user" does not exist, skipping
+2024-05-09T16:40:59.746+02:00  INFO 10600 --- [virtual-dossier] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09T16:40:59.755+02:00  WARN 10600 --- [virtual-dossier] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restResponseEntityExceptionHandler': Lookup method resolution failed
+2024-05-09T16:40:59.755+02:00  INFO 10600 --- [virtual-dossier] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09T16:40:59.779+02:00  INFO 10600 --- [virtual-dossier] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-09T16:40:59.783+02:00  INFO 10600 --- [virtual-dossier] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-09T16:40:59.785+02:00  INFO 10600 --- [virtual-dossier] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-05-09T16:40:59.797+02:00  INFO 10600 --- [virtual-dossier] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-09T16:40:59.810+02:00 ERROR 10600 --- [virtual-dossier] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restResponseEntityExceptionHandler': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:497) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1294) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.gersimuca.Warehouse.Management.WarehouseManagementApplication.main(WarehouseManagementApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.gersimuca.Warehouse.Management.exception.RestResponseEntityExceptionHandler] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:475) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/web/method/annotation/HandlerMethodValidationException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.6.jar:6.1.6]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.web.method.annotation.HandlerMethodValidationException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 25 common frames omitted
+

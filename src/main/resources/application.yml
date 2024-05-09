@@ -1,0 +1,132 @@
+management:
+  server:
+    port: 9000
+    ssl:
+      enabled: false
+  info:
+    git:
+      mode: full
+  health:
+    diskspace:
+      enabled: true
+      threshold: 5GB
+  endpoint:
+    health:
+      show-components: always
+      show-details: always
+  endpoints:
+    web:
+      cors:
+        allowed-origins: "*"
+        allowed-methods: OPTIONS, GET, POST
+        allowed-headers: "*"
+      exposure:
+        include: '*'
+
+logging:
+  file:
+    path: ./logs
+
+server:
+  shutdown: graceful
+  tomcat:
+    max-keep-alive-requests: 5000
+    connection-timeout: 60000
+    mbeanregistry:
+      enabled: true
+    accesslog:
+      buffered: true
+      directory: access
+      enabled: true
+      file-date-format: .yyyy-MM-dd
+      pattern: common
+      prefix: access_log
+      request-attributes-enabled: true
+      rotate: true
+      suffix: .log
+    basedir: ./logs
+    max-threads: 100
+  servlet:
+    context-path: /rest-api
+  port: ${CONTAINER_PORT:9443}
+  forward-headers-strategy: native
+  use-forward-headers: true
+  error:
+    path: /user/error
+    whitelabel:
+      enabled: true
+
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  sql:
+    init:
+      mode: never
+      continue-on-error: false
+      schema-locations: classpath:data/schema.sql
+      data-locations: classpath:data/data.sql
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRESQL_HOST:0.0.0.0}:${POSTGRESQL_PORT:5432}/${POSTGRESQL_DATABASE:docdatabase}
+    username: ${POSGRESQL_USERNAME:pgi}
+    password: ${POSGRESQL_PASSWORD:pgi}
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+  cache:
+    type: caffeine
+    cache-names: clients, users, dictionaries, clients-idpools
+    caffeine:
+      spec: maximumSize=500, expireAfterAccess=300s
+  lifecycle:
+    timeout-per-shutdown-phase: 1m
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+      fail-on-empty-beans: false
+      close-closeable: true
+      flush-after-write-value: true
+      write-date-keys-as-timestamps: false
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unknown-properties: false
+  boot:
+    admin:
+      client:
+        url: http://admin:8081
+        username: sba-client
+        password: pgi2zabka
+        instance:
+          name: ECM REST Service
+          service-url: https://localhost:9443/rest-api
+          metadata:
+            user:
+              name: sba-client
+              password: pgi2user
+  application:
+    name: virtual-dossier
+    security:
+      user:
+        name: sba-client
+        password: pgi2user
+        roles:
+          - ACTUATOR_ROLE
+          - SWAGGER_ROLE
+  servlet:
+    multipart:
+      maxFileSize: 1024MB
+      maxRequestSize: 1024MB
+      enabled: true
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLInnoDBDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
