@@ -105,7 +105,7 @@ spring:
               name: sba-client
               password: pgi2user
   application:
-    name: virtual-dossier
+    name: gersi-muca
     security:
       user:
         name: sba-client

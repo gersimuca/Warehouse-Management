@@ -1,0 +1,380 @@
+2024-05-09 | 22:57:16.388 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 5956 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 22:57:16.390 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 22:57:16.445 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 22:57:16.446 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 22:57:16.684 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 29364 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 22:57:16.686 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 22:57:16.733 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 22:57:16.733 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 22:57:17.338 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 22:57:17.382 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 38 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 22:57:17.457 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 22:57:17.576 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 102 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 22:57:17.963 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 22:57:18.043 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 22:57:18.050 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 22:57:18.051 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 22:57:18.106 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 22:57:18.106 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1373 ms
+2024-05-09 | 22:57:18.213 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 22:57:18.255 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 22:57:18.278 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 22:57:18.442 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 22:57:18.461 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 22:57:18.556 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b83f797
+2024-05-09 | 22:57:18.557 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 22:57:18.578 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 22:57:18.824 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 22:57:18.949 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 22:57:18.959 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 22:57:18.960 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 22:57:19.072 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 22:57:19.073 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 2627 ms
+2024-05-09 | 22:57:19.286 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 22:57:19.304 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 22:57:19.318 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.318 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:57:19.319 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.319 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:57:19.320 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.321 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 22:57:19.322 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.322 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 22:57:19.323 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.323 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 22:57:19.324 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.324 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 22:57:19.325 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.325 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 22:57:19.325 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.326 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 22:57:19.327 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:19.327 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 22:57:19.378 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 22:57:19.385 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 22:57:19.439 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 22:57:19.873 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 22:57:19.924 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 22:57:20.149 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 22:57:20.151 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e12ff51
+2024-05-09 | 22:57:20.154 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 22:57:20.200 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 22:57:20.327 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 22:57:20.342 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 22:57:20.354 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 22:57:20.360 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.01 seconds (process running for 4.763)
+2024-05-09 | 22:57:21.818 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 22:57:21.950 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 22:57:50.159 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 22:57:50.386 | tartedMain |  WARN | o.s.b.d.a.OptionalLiveReloadServer  | Unable to start LiveReload server
+2024-05-09 | 22:57:50.411 | tartedMain |  WARN | gServletWebServerApplicationContext | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-05-09 | 22:57:50.414 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 22:57:50.441 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 22:57:50.444 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 22:57:52.923 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 22:57:52.926 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 22:57:52.930 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 22:57:52.934 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.934 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:57:52.935 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.935 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:57:52.936 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.936 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 22:57:52.937 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.937 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 22:57:52.938 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.938 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 22:57:52.939 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.939 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 22:57:52.940 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.940 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 22:57:52.942 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.942 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 22:57:52.943 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:57:52.943 | utdownHook |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 22:57:52.945 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 22:57:52.947 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 22:58:12.568 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 3148 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 22:58:12.569 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 22:58:12.625 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 22:58:12.625 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 22:58:13.310 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 22:58:13.354 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 38 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 22:58:13.955 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 22:58:14.041 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 22:58:14.050 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 22:58:14.050 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 22:58:14.107 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 22:58:14.107 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1481 ms
+2024-05-09 | 22:58:14.212 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 22:58:14.251 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 22:58:14.274 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 22:58:14.432 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 22:58:14.452 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 22:58:14.549 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@285617d9
+2024-05-09 | 22:58:14.550 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 22:58:14.572 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 22:58:15.302 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 22:58:15.318 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.318 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:58:15.319 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.319 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 22:58:15.320 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.320 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 22:58:15.321 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.321 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 22:58:15.322 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.322 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 22:58:15.323 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.323 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 22:58:15.324 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.324 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 22:58:15.325 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.325 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 22:58:15.326 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 22:58:15.326 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 22:58:15.383 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 22:58:16.163 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 22:58:16.343 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 22:58:16.358 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 22:58:16.376 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 22:58:16.382 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.165 seconds (process running for 4.837)
+2024-05-09 | 23:00:20.038 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 23:00:20.041 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 23:00:20.045 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:00:20.073 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:00:20.074 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 23:00:25.865 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 29576 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 23:00:25.866 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 23:00:25.937 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 23:00:25.937 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 23:00:26.584 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 23:00:26.629 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 39 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 23:00:27.302 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 23:00:27.388 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:00:27.396 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 23:00:27.396 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 23:00:27.454 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 23:00:27.454 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1516 ms
+2024-05-09 | 23:00:27.560 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 23:00:27.599 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 23:00:27.621 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 23:00:27.778 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 23:00:27.800 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 23:00:27.904 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f5e7f4c
+2024-05-09 | 23:00:27.905 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 23:00:27.926 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 23:00:28.651 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 23:00:28.667 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.667 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:00:28.668 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.668 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:00:28.670 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.670 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 23:00:28.671 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.671 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 23:00:28.672 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.672 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 23:00:28.674 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.674 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 23:00:28.674 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.675 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 23:00:28.675 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.675 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 23:00:28.676 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:00:28.676 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 23:00:28.737 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:00:29.541 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 23:00:29.727 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 23:00:29.749 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:00:29.761 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 23:00:29.770 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.25 seconds (process running for 4.97)
+2024-05-09 | 23:01:40.017 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 23:01:40.020 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 23:01:40.023 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:01:40.049 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:01:40.052 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 23:01:42.467 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 6728 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 23:01:42.468 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 23:01:42.532 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 23:01:42.532 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 23:01:43.193 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 23:01:43.236 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 37 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 23:01:43.850 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 23:01:43.935 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:01:43.944 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 23:01:43.944 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 23:01:44.002 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 23:01:44.002 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1469 ms
+2024-05-09 | 23:01:44.106 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 23:01:44.147 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 23:01:44.170 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 23:01:44.325 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 23:01:44.345 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 23:01:44.447 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7d4de896
+2024-05-09 | 23:01:44.448 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 23:01:44.469 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 23:01:45.183 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 23:01:45.199 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.199 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:01:45.201 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.201 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:01:45.202 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.203 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 23:01:45.203 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.204 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 23:01:45.205 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.205 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 23:01:45.206 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.206 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 23:01:45.207 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.207 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 23:01:45.208 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.208 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 23:01:45.209 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:01:45.209 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 23:01:45.277 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:01:46.070 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 23:01:46.267 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 23:01:46.285 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:01:46.296 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 23:01:46.302 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.204 seconds (process running for 4.942)
+2024-05-09 | 23:05:20.415 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 23:05:20.419 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 23:05:20.422 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:05:20.455 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:05:20.457 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 23:05:26.164 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 5096 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 23:05:26.166 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 23:05:26.232 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 23:05:26.233 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 23:05:26.901 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 23:05:26.949 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 23:05:27.591 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 23:05:27.679 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:05:27.688 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 23:05:27.689 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 23:05:27.743 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 23:05:27.744 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1508 ms
+2024-05-09 | 23:05:27.855 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 23:05:27.897 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 23:05:27.920 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 23:05:28.087 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 23:05:28.109 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 23:05:28.207 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@336d0e13
+2024-05-09 | 23:05:28.209 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 23:05:28.231 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 23:05:28.955 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 23:05:28.970 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.970 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:05:28.971 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.971 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:05:28.973 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.973 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 23:05:28.974 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.974 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 23:05:28.975 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.975 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 23:05:28.976 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.976 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 23:05:28.977 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.977 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 23:05:28.978 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.978 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 23:05:28.979 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:05:28.979 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 23:05:29.041 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:05:29.830 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 23:05:30.020 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 23:05:30.037 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:05:30.049 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 23:05:30.056 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.268 seconds (process running for 4.942)
+2024-05-09 | 23:08:49.787 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 23:08:49.790 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 23:08:49.794 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:08:49.825 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:08:49.831 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 23:08:55.750 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Starting WarehouseManagementApplication using Java 21.0.2 with PID 5076 (C:\Users\gm96k\Desktop\Warehouse-Management\target\classes started by gersimuca in C:\Users\gm96k\Desktop\Warehouse-Management)
+2024-05-09 | 23:08:55.751 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | The following 1 profile is active: "dev"
+2024-05-09 | 23:08:55.817 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-09 | 23:08:55.817 | tartedMain |  INFO | vToolsPropertyDefaultsPostProcessor | For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-09 | 23:08:56.567 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 | 23:08:56.624 | tartedMain |  INFO | r.c.RepositoryConfigurationDelegate | Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2024-05-09 | 23:08:57.279 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat initialized with port 9443 (http)
+2024-05-09 | 23:08:57.368 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:08:57.376 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 23:08:57.377 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 23:08:57.437 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 23:08:57.437 | tartedMain |  INFO | .ServletWebServerApplicationContext | Root WebApplicationContext: initialization completed in 1618 ms
+2024-05-09 | 23:08:57.551 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 23:08:57.589 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 23:08:57.612 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 23:08:57.767 | tartedMain |  INFO | o.s.o.j.p.SpringPersistenceUnitInfo | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-09 | 23:08:57.790 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 23:08:57.886 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@288d503e
+2024-05-09 | 23:08:57.887 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 23:08:57.908 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 23:08:58.619 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 23:08:58.634 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.635 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:08:58.636 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.636 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:08:58.637 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.637 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 23:08:58.638 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.639 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 23:08:58.640 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.640 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 23:08:58.640 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.640 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 23:08:58.641 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.641 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 23:08:58.643 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.643 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 23:08:58.643 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:08:58.643 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 23:08:58.705 | tartedMain |  INFO | alContainerEntityManagerFactoryBean | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:08:59.559 | tartedMain |  WARN | efaultTemplateResolverConfiguration | Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-09 | 23:08:59.810 | tartedMain |  INFO | o.s.b.d.a.OptionalLiveReloadServer  | LiveReload server is running on port 35729
+2024-05-09 | 23:08:59.830 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:08:59.842 | tartedMain |  INFO | o.s.b.w.e.tomcat.TomcatWebServer    | Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-09 | 23:08:59.850 | tartedMain |  INFO | .W.M.WarehouseManagementApplication | Started WarehouseManagementApplication in 4.481 seconds (process running for 5.225)
+2024-05-09 | 23:11:49.542 | utdownHook |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-09 | 23:11:49.545 | t-shutdown |  INFO | o.s.b.w.e.tomcat.GracefulShutdown   | Graceful shutdown complete
+2024-05-09 | 23:11:49.549 | utdownHook |  INFO | alContainerEntityManagerFactoryBean | Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 | 23:11:49.577 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:11:49.579 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.
+2024-05-09 | 23:17:31.545 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Initializing ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:17:31.554 | tartedMain |  INFO | o.a.catalina.core.StandardService   | Starting service [Tomcat]
+2024-05-09 | 23:17:31.554 | tartedMain |  INFO | o.a.catalina.core.StandardEngine    | Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-09 | 23:17:31.611 | tartedMain |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring embedded WebApplicationContext
+2024-05-09 | 23:17:31.754 | tartedMain |  INFO | o.h.jpa.internal.util.LogHelper     | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 | 23:17:31.798 | tartedMain |  INFO | org.hibernate.Version               | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-09 | 23:17:31.821 | tartedMain |  INFO | o.h.c.i.RegionFactoryInitiator      | HHH000026: Second-level cache disabled
+2024-05-09 | 23:17:32.002 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Starting...
+2024-05-09 | 23:17:32.101 | tartedMain |  INFO | com.zaxxer.hikari.pool.HikariPool   | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56214547
+2024-05-09 | 23:17:32.102 | tartedMain |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Start completed.
+2024-05-09 | 23:17:32.125 | tartedMain |  WARN | org.hibernate.orm.deprecation       | HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-09 | 23:17:32.832 | tartedMain |  INFO | o.h.e.t.j.p.i.JtaPlatformInitiator  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-09 | 23:17:32.848 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.848 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:17:32.849 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.849 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "delivery" does not exist, skipping
+2024-05-09 | 23:17:32.850 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.850 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "item" does not exist, skipping
+2024-05-09 | 23:17:32.851 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.852 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | relation "order" does not exist, skipping
+2024-05-09 | 23:17:32.853 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.853 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "delivery" does not exist, skipping
+2024-05-09 | 23:17:32.854 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.854 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "item" does not exist, skipping
+2024-05-09 | 23:17:32.855 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.855 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "order" does not exist, skipping
+2024-05-09 | 23:17:32.856 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.856 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "truck" does not exist, skipping
+2024-05-09 | 23:17:32.857 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | SQL Warning Code: 0, SQLState: 00000
+2024-05-09 | 23:17:32.857 | tartedMain |  WARN | o.h.e.jdbc.spi.SqlExceptionHelper   | table "user" does not exist, skipping
+2024-05-09 | 23:17:33.756 | tartedMain |  INFO | o.a.coyote.http11.Http11NioProtocol | Starting ProtocolHandler ["http-nio-9443"]
+2024-05-09 | 23:20:43.437 | 443-exec-5 |  INFO | o.a.c.c.C.[.[localhost].[/rest-api] | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-09 | 23:23:38.898 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown initiated...
+2024-05-09 | 23:23:38.900 | utdownHook |  INFO | com.zaxxer.hikari.HikariDataSource  | HikariPool-1 - Shutdown completed.

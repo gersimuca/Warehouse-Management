@@ -3,7 +3,6 @@ package com.gersimuca.Warehouse.Management.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Entity
 @Data

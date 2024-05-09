@@ -1,51 +1,39 @@
 package com.gersimuca.Warehouse.Management.security.adapter;
 
+import com.gersimuca.Warehouse.Management.security.filter.JwtAuthenticationFilter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 
 @EnableWebSecurity
 @Configuration
+@RequiredArgsConstructor
 public class WebSecurityConfig {
 
-    public static final String SWAGGER_UI = "/swagger-ui/**";
-    public static final String V_1_API_DOCS = "/v1/api-docs/**";
-    public static final String WEBJARS = "/webjars/**";
-    public static final String SWAGGER_UI_HTML = "/swagger-ui.html";
-    public static final String API_DOCS = "/api-docs/**";
-    public static final String ROLE_SWAGGER = "SWAGGER";
-    public static final String SWAGGER_UI_INDEX_HTML = "/swagger-ui/index.html";
-
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final AuthenticationProvider authenticationProvider;
 
     @Bean
-    @Order(2)
-    public SecurityFilterChain swaggerUiFilterChain(HttpSecurity http) throws Exception {
-        return http.securityMatcher(SWAGGER_UI).
-                authorizeHttpRequests(authz -> authz
-                        .requestMatchers(SWAGGER_UI_HTML, SWAGGER_UI, V_1_API_DOCS, WEBJARS,
-                                SWAGGER_UI_INDEX_HTML, API_DOCS)
-                        .hasRole(ROLE_SWAGGER)
-                        .anyRequest().authenticated())
-                .httpBasic(Customizer.withDefaults())
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .build();
-    }
-
-    @Bean
-    public SecurityFilterChain swaggerApiFilterChain(HttpSecurity http) throws Exception {
-        return http.securityMatcher(V_1_API_DOCS).
-                authorizeHttpRequests(authz -> authz
-                        .requestMatchers(SWAGGER_UI_HTML, SWAGGER_UI, V_1_API_DOCS, WEBJARS,
-                                SWAGGER_UI_INDEX_HTML, API_DOCS)
-                        .hasRole(ROLE_SWAGGER)
-                        .anyRequest().authenticated())
-                .httpBasic(Customizer.withDefaults())
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+    public SecurityFilterChain jwtFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(authz-> authz
+                        .requestMatchers("/api/v1/auth/**")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated()
+                )
+                .sessionManagement((session) -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }

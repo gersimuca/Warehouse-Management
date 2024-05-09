@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:00:48 +0200] "POST /rest-api/api/v1/auth/register HTTP/1.1" 200 154
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:00:52 +0200] "POST /rest-api/api/v1/auth/authenticate HTTP/1.1" 500 15
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:00:57 +0200] "POST /rest-api/api/v1/auth/authenticate HTTP/1.1" 500 15
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:13:07 +0200] "POST /rest-api/api/v1/auth/register HTTP/1.1" 200 154
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:13:12 +0200] "POST /rest-api/api/v1/auth/authenticate HTTP/1.1" 500 15
+0:0:0:0:0:0:0:1 - - [10/May/2024:00:17:58 +0200] "POST /rest-api/api/v1/auth/authenticate HTTP/1.1" 500 15

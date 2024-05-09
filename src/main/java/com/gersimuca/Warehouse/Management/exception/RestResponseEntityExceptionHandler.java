@@ -28,7 +28,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
     @ExceptionHandler(value = {ServiceException.class})
     protected ResponseEntity<Object> customBTExceptionHandle(ServiceException e){
-        ErrorResponse btErrorResponse = ErrorResponse.builder()
+        ErrorResponse errorResponse = ErrorResponse.builder()
                 .params(e.getParams() != null ? e.getParams() : null)
                 .cause(e.getCause())
                 .throwableCauseMessage(e.getCause() != null ? e.getCause().getLocalizedMessage() : null)
@@ -38,14 +38,14 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
                 .timestamp(LocalDateTime.now())
                 .trace(e.isTrace())
                 .build();
-        logger.error(".customBTExceptionHandle: \n" + btErrorResponse.toString(), e);
-        return getObjectResponseEntity(btErrorResponse);
+        logger.error(".customExceptionHandle: \n" + errorResponse.toString(), e);
+        return getObjectResponseEntity(errorResponse);
     }
 
     @NotNull
-    private ResponseEntity<Object> getObjectResponseEntity(ErrorResponse BTErrorResponse){
+    private ResponseEntity<Object> getObjectResponseEntity(ErrorResponse errorResponse){
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity<>(BTErrorResponse, headers, BTErrorResponse.getStatus());
+        return new ResponseEntity<>(errorResponse, headers, errorResponse.getStatus());
     }
 }

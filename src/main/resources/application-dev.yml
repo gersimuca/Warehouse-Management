@@ -1,7 +1,5 @@
 #Server
 ACTIVE_PROFILE: dev
-CONTAINER_PORT: 8085
-
 
 #Database
 POSGRESQL_USERNAME: pgi
