@@ -26,7 +26,6 @@ public class AuthenticationService {
         var user = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .password(request.getPassword())
                 .role(Role.CLIENT)
                 .build();
         userRepository.save(user);
