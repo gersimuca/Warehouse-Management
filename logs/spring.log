@@ -8374,3 +8374,68 @@ Caused by: org.hibernate.AnnotationException: Collection 'com.gersimuca.Warehous
 2024-05-10T16:50:14.907+02:00  INFO 21600 --- [gersi-muca] [http-nio-9443-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-05-10T16:50:14.910+02:00  INFO 21600 --- [gersi-muca] [http-nio-9443-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2024-05-10T16:50:33.304+02:00  INFO 21600 --- [gersi-muca] [http-nio-9443-exec-7] c.g.W.M.u.metrics.ExecutionTimeAdvice    : com.gersimuca.Warehouse.Management.service.OrderService=>createOrder. Time taken for Execution is : 35ms
+2024-05-10T17:16:16.918+02:00  INFO 21600 --- [gersi-muca] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-10T17:16:16.934+02:00  INFO 21600 --- [gersi-muca] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-05-10T17:16:16.941+02:00  INFO 21600 --- [gersi-muca] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-10T17:16:17.003+02:00  INFO 21600 --- [gersi-muca] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-10T17:16:17.005+02:00  INFO 21600 --- [gersi-muca] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-10T17:16:21.994+02:00  INFO 21320 --- [gersi-muca] [restartedMain] c.g.W.M.WarehouseManagementApplication   : Starting WarehouseManagementApplication using Java 21.0.2 with PID 21320 (C:\Users\Gersi Muca\Desktop\Warehouse-Management\target\classes started by Gersi Muca in C:\Users\Gersi Muca\Desktop\Warehouse-Management)
+2024-05-10T17:16:21.995+02:00  INFO 21320 --- [gersi-muca] [restartedMain] c.g.W.M.WarehouseManagementApplication   : The following 1 profile is active: "dev"
+2024-05-10T17:16:22.074+02:00  INFO 21320 --- [gersi-muca] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-10T17:16:22.075+02:00  INFO 21320 --- [gersi-muca] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-10T17:16:22.811+02:00  INFO 21320 --- [gersi-muca] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-10T17:16:22.869+02:00  INFO 21320 --- [gersi-muca] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 6 JPA repository interfaces.
+2024-05-10T17:16:23.514+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9443 (http)
+2024-05-10T17:16:23.630+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-10T17:16:23.631+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-10T17:16:23.689+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.a.c.c.C.[.[localhost].[/rest-api]      : Initializing Spring embedded WebApplicationContext
+2024-05-10T17:16:23.689+02:00  INFO 21320 --- [gersi-muca] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1614 ms
+2024-05-10T17:16:23.812+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-10T17:16:23.851+02:00  INFO 21320 --- [gersi-muca] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-10T17:16:23.877+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-10T17:16:24.050+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-10T17:16:24.080+02:00  INFO 21320 --- [gersi-muca] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-10T17:16:24.206+02:00  INFO 21320 --- [gersi-muca] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@455eda7
+2024-05-10T17:16:24.207+02:00  INFO 21320 --- [gersi-muca] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-10T17:16:24.236+02:00  WARN 21320 --- [gersi-muca] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-10T17:16:25.043+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-10T17:16:25.060+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.060+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "delivery" does not exist, skipping
+2024-05-10T17:16:25.062+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.062+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "delivery" does not exist, skipping
+2024-05-10T17:16:25.063+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.063+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order" does not exist, skipping
+2024-05-10T17:16:25.064+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.064+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_item" does not exist, skipping
+2024-05-10T17:16:25.065+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.065+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_item" does not exist, skipping
+2024-05-10T17:16:25.065+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.066+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "token" does not exist, skipping
+2024-05-10T17:16:25.066+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.067+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "delivery" does not exist, skipping
+2024-05-10T17:16:25.067+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.068+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "item" does not exist, skipping
+2024-05-10T17:16:25.068+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.068+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order" does not exist, skipping
+2024-05-10T17:16:25.070+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.070+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_item" does not exist, skipping
+2024-05-10T17:16:25.070+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.070+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "token" does not exist, skipping
+2024-05-10T17:16:25.071+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.071+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "truck" does not exist, skipping
+2024-05-10T17:16:25.072+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.072+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user" does not exist, skipping
+2024-05-10T17:16:25.073+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-10T17:16:25.073+02:00  WARN 21320 --- [gersi-muca] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "token_seq" does not exist, skipping
+2024-05-10T17:16:25.165+02:00  INFO 21320 --- [gersi-muca] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-10T17:16:25.438+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-10T17:16:26.320+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4dfd6ee7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39d1d607, org.springframework.security.web.context.SecurityContextHolderFilter@3125661, org.springframework.security.web.header.HeaderWriterFilter@24d7f73d, org.springframework.web.filter.CorsFilter@3c4c0ba9, org.springframework.security.web.authentication.logout.LogoutFilter@47b591d8, com.gersimuca.Warehouse.Management.security.filter.JwtAuthenticationFilter@53c66237, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75a85a2a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24fa5f2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25abc405, org.springframework.security.web.session.SessionManagementFilter@54b3e702, org.springframework.security.web.access.ExceptionTranslationFilter@4f3cb467, org.springframework.security.web.access.intercept.AuthorizationFilter@768e62c6]
+2024-05-10T17:16:26.461+02:00  WARN 21320 --- [gersi-muca] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-05-10T17:16:26.649+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-10T17:16:26.680+02:00  INFO 21320 --- [gersi-muca] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9443 (http) with context path '/rest-api'
+2024-05-10T17:16:26.689+02:00  INFO 21320 --- [gersi-muca] [restartedMain] c.g.W.M.WarehouseManagementApplication   : Started WarehouseManagementApplication in 5.108 seconds (process running for 5.829)
+2024-05-10T17:23:32.929+02:00  INFO 21320 --- [gersi-muca] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-05-10T17:23:32.945+02:00  INFO 21320 --- [gersi-muca] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-05-10T17:23:32.951+02:00  INFO 21320 --- [gersi-muca] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-10T17:23:33.017+02:00  INFO 21320 --- [gersi-muca] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-10T17:23:33.024+02:00  INFO 21320 --- [gersi-muca] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

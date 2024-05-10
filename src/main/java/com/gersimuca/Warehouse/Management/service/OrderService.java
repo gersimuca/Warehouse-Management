@@ -5,22 +5,21 @@ import com.gersimuca.Warehouse.Management.enumeration.Status;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
 import com.gersimuca.Warehouse.Management.model.Item;
 import com.gersimuca.Warehouse.Management.model.Order;
+import com.gersimuca.Warehouse.Management.model.OrderItem;
 import com.gersimuca.Warehouse.Management.model.User;
 import com.gersimuca.Warehouse.Management.repository.ItemRepository;
+import com.gersimuca.Warehouse.Management.repository.OrderItemRepository;
 import com.gersimuca.Warehouse.Management.repository.OrderRepository;
 import com.gersimuca.Warehouse.Management.repository.UserRepository;
 import com.gersimuca.Warehouse.Management.security.provider.JwtService;
 import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +28,7 @@ public class OrderService {
     private final ItemRepository itemRepository;
     private final OrderRepository orderRepository;
     private final JwtService jwtService;
+    private final OrderItemRepository orderItemRepository;
 
     @TrackExecutionTime
     @Transactional
@@ -41,15 +41,22 @@ public class OrderService {
         User user = userRepository.findByUsername(username).orElseThrow(()-> new ServiceException("User not found"));
         List<Item> items = itemRepository.findItemsByIds(extractItemIds(itemRequestList));
 
-        items.stream()
-                .map(item -> Order.builder()
-                        .submittedDate(LocalDate.now())
-                        .status(Status.CREATED)
-                        .deadlineDate(LocalDate.now().plusDays(30))
-                        .user(user)
-                        .item(item)
-                        .build())
-                .forEach(orderRepository::save);
+        Order order = Order.builder()
+                .submittedDate(LocalDate.now())
+                .status(Status.CREATED)
+                .deadlineDate(LocalDate.now().plusDays(30))
+                .user(user)
+                .build();
+        order = orderRepository.save(order);
+
+        for(var item : items){
+            orderItemRepository.save(OrderItem.builder()
+                            .item(item)
+                            .order(order)
+                            .quantity(item.getQuantity())
+                    .build());
+        }
+
     }
 
     private boolean isQuantityAvailable(List<ItemRequest> itemRequestList){
