@@ -1,5 +1,6 @@
 package com.gersimuca.Warehouse.Management.dto;
 
+import com.gersimuca.Warehouse.Management.enumeration.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,4 +14,5 @@ public class RegisterRequest {
 
     private String username;
     private String password;
+    private Role role;
 }
