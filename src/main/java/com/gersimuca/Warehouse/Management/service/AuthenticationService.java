@@ -34,8 +34,9 @@ public class AuthenticationService {
         var user = User.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.CLIENT)
+                .role(request.getRole() != null ? request.getRole() : Role.CLIENT )
                 .build();
+
         var savedUser = userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
         Token token = TokenUtil.saveUserToken(savedUser, jwtToken);

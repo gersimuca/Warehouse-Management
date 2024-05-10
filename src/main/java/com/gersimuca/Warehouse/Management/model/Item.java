@@ -4,6 +4,8 @@ package com.gersimuca.Warehouse.Management.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 public class Item {
@@ -17,9 +19,5 @@ public class Item {
     private int quantity;
 
     private double unitPrice;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
 
 }

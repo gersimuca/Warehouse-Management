@@ -1,6 +1,8 @@
 package com.gersimuca.Warehouse.Management;
 
 import com.gersimuca.Warehouse.Management.dto.RegisterRequest;
+import com.gersimuca.Warehouse.Management.model.User;
+import com.gersimuca.Warehouse.Management.repository.UserRepository;
 import com.gersimuca.Warehouse.Management.service.AuthenticationService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +21,7 @@ public class WarehouseManagementApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(
-			AuthenticationService authenticationService
+			AuthenticationService authenticationService, UserRepository userRepository
 	) {
 		return args -> {
 			var admin = RegisterRequest.builder()

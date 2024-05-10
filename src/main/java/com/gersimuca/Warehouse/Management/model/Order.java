@@ -2,7 +2,10 @@ package com.gersimuca.Warehouse.Management.model;
 
 import com.gersimuca.Warehouse.Management.enumeration.Status;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,6 +13,9 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Order {
 
     @Id
@@ -23,10 +29,11 @@ public class Order {
 
     private LocalDate deadlineDate;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<Item> items;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
 }

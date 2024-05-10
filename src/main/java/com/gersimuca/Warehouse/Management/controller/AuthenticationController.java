@@ -42,7 +42,7 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<Response> login(@RequestBody AuthenticationRequest auth, HttpServletRequest request){
-        String successMessage = "Account created successfully!";
+        String successMessage = "Account login successfully!";
         HttpStatus status = HttpStatus.OK;
 
         Map<?, ?> data = authenticationService.authenticate(auth);
