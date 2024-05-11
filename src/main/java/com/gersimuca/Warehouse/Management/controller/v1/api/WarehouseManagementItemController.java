@@ -80,7 +80,7 @@ public class WarehouseManagementItemController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Response> deleteItem(@PathVariable Long id, HttpServletRequest request) {
+    public ResponseEntity<Response> deleteItem(@PathVariable Long id) {
         itemService.deleteItem(id);
 
         URI location = ServletUriComponentsBuilder

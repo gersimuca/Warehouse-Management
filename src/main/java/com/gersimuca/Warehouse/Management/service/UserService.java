@@ -2,6 +2,7 @@ package com.gersimuca.Warehouse.Management.service;
 
 import com.gersimuca.Warehouse.Management.dto.UserDto;
 import com.gersimuca.Warehouse.Management.dto.mapper.UserDtoMapper;
+import com.gersimuca.Warehouse.Management.dto.request.ChangePasswordRequest;
 import com.gersimuca.Warehouse.Management.dto.request.UserRequest;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
 import com.gersimuca.Warehouse.Management.model.User;
@@ -11,11 +12,13 @@ import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,6 +111,29 @@ public class UserService {
             return data;
         } catch (Exception e) {
             log.error("Error occurred while getting user by username: {}", e.getMessage());
+            throw e;
+        }
+    }
+
+
+
+    public void changePassword(ChangePasswordRequest request, Principal connectedUser) {
+        try {
+            User user = (User) ((UsernamePasswordAuthenticationToken) connectedUser).getPrincipal();
+
+            if (!passwordEncoder.matches(request.getCurrentPassword(), user.getPassword())) {
+                throw new ServiceException("Wrong password");
+            }
+
+            if (!request.getNewPassword().equals(request.getConfirmationPassword())) {
+                throw new ServiceException("Password are not the same");
+            }
+
+            user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+
+            userRepository.save(user);
+        } catch (Exception e) {
+            log.error("Error occurred while changing password: {}", e.getMessage());
             throw e;
         }
     }
