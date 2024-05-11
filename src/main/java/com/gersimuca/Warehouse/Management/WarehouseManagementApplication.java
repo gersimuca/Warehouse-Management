@@ -41,10 +41,10 @@ public class WarehouseManagementApplication {
 			System.out.println("Manager token: " + authenticationService.register(manager));
 
 			itemRepository.saveAll(List.of(
-					Item.builder().itemName("Laptop").quantity(5).unitPrice(1200.00).build(),
+					Item.builder().itemName("Laptop").quantity(10).unitPrice(1200.00).build(),
 					Item.builder().itemName("Mouse").quantity(10).unitPrice(20.50).build(),
-					Item.builder().itemName("Keyboard").quantity(8).unitPrice(40.00).build(),
-					Item.builder().itemName("Monitor").quantity(3).unitPrice(300.00).build()
+					Item.builder().itemName("Keyboard").quantity(10).unitPrice(40.00).build(),
+					Item.builder().itemName("Monitor").quantity(10).unitPrice(300.00).build()
 			));
 		};
 	}

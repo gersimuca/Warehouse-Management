@@ -8,6 +8,7 @@ import com.gersimuca.Warehouse.Management.enumeration.Status;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
 import com.gersimuca.Warehouse.Management.model.Item;
 import com.gersimuca.Warehouse.Management.model.Order;
+import com.gersimuca.Warehouse.Management.model.OrderItem;
 import com.gersimuca.Warehouse.Management.model.User;
 import com.gersimuca.Warehouse.Management.repository.ItemRepository;
 import com.gersimuca.Warehouse.Management.repository.OrderItemRepository;
@@ -49,13 +50,14 @@ public class OrderService {
 
             String username = jwtService.extractUsername(jwt);
             User user = userRepository.findByUsername(username).orElseThrow(()-> new ServiceException("User not found"));
-            List<Item> items = itemRepository.findItemsByIds(extractItemIds(itemRequestList));
 
             Order order = OrderUtil.createOrder(Status.CREATED, LocalDate.now().plusDays(7), user);
             order = orderRepository.save(order);
 
-            for(var item : items){
-                orderItemRepository.save(OrderItemUtil.createOrderItem(item, order));
+            for(var itemRequest : itemRequestList){
+                Item item = itemRepository.findById(itemRequest.getItemId())
+                        .orElseThrow(() -> new ServiceException("Item not found"));
+                orderItemRepository.save(OrderItemUtil.createOrderItem(item, order, itemRequest.getQuantity() ));
             }
         } catch (Exception e) {
             log.error("Error occurred while creating order: {}", e.getMessage());
@@ -194,12 +196,24 @@ public class OrderService {
     }
 
     @TrackExecutionTime
+    @Transactional(propagation= Propagation.REQUIRES_NEW)
     public void updateOrderToFulfilled(Long id) {
         try {
             Order order = orderRepository.findById(id)
                     .orElseThrow(() -> new ServiceException("Order not found"));
             order.setStatus(Status.FULFILLED);
             orderRepository.save(order);
+
+            for(OrderItem orderItem : order.getOrderItems()){
+                int quantiy = itemRepository.findQuantityById(orderItem.getItem().getItemId());
+                quantiy -= orderItem.getQuantity();
+
+                Item item = itemRepository.findById(orderItem.getItem().getItemId())
+                        .orElseThrow(() -> new ServiceException("Item not found"));
+                item.setQuantity(quantiy);
+
+                itemRepository.save(item);
+            }
         } catch (Exception e) {
             log.error("Error occurred while updating order to fulfilled: {}", e.getMessage());
             throw e;

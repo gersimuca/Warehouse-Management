@@ -30,7 +30,7 @@ public class DeliveryService {
     private final DeliveryRepository deliveryRepository;
     private final TruckRepository truckRepository;
 
-    @Transactional(propagation= Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     @TrackExecutionTime
     public void scheduleDelivery(ScheduleDeliveryRequest request) {
         if (request.getDeliveryDate().getDayOfWeek() == DayOfWeek.SUNDAY) {
@@ -55,42 +55,30 @@ public class DeliveryService {
                     return new ServiceException("Trucks not found");
                 });
 
-        for(Truck truck : trucks){
-            if (!canTruckCompleteDelivery(truck, request.getDeliveryDate())) {
-                logger.error("Truck {} is not available on {}", truck.getChassisNumber(), request.getDeliveryDate());
-                throw new ServiceException("Truck " + truck.getChassisNumber() + " is not available on " + request.getDeliveryDate());
+        for (Truck truck : trucks) {
+            if (canTruckCompleteDelivery(truck, request.getDeliveryDate(), order)) {
+
+                order.setStatus(Status.UNDER_DELIVERY);
+
+                orderRepository.save(order);
+
+                Delivery delivery = DeliveryUtil.createDelivery(request.getDeliveryDate(), order, truck);
+                deliveryRepository.save(delivery);
+                return;
             }
+            logger.error("Truck {} is not available or cannot carry the items on {}", truck.getChassisNumber(), request.getDeliveryDate());
         }
 
-        order.setStatus(Status.UNDER_DELIVERY);
-        orderRepository.save(order);
-
-        Delivery delivery = DeliveryUtil.createDelivery(request.getDeliveryDate(), order, trucks.get(0));
-
-        deliveryRepository.save(delivery);
-
+        throw new ServiceException("Trucks " + List.of(trucks) + " are not available or cannot carry the items on " + request.getDeliveryDate());
     }
 
-
-    private boolean canTruckCompleteDelivery(Truck truck, LocalDate deliveryDate) {
+    private boolean canTruckCompleteDelivery(Truck truck, LocalDate deliveryDate, Order order) {
         List<Delivery> deliveriesOnDate = deliveryRepository.findAllByTruckAndDeliveryDate(truck, deliveryDate);
-
-        int totalItems = 0;
-
-        if(deliveriesOnDate != null){
-            for (Delivery delivery : deliveriesOnDate) {
-                totalItems += calculateTotalItemsInDelivery(delivery);
-            }
+        if (!deliveriesOnDate.isEmpty()) {
+            return false;
         }
 
-        return totalItems < truck.getCapacity();
-    }
-
-    private int calculateTotalItemsInDelivery(Delivery delivery) {
-        int totalItems = 0;
-        for (OrderItem orderItem : delivery.getOrder().getOrderItems()) {
-            totalItems += orderItem.getQuantity();
-        }
-        return totalItems;
+        int totalItems = order.getOrderItems().stream().mapToInt(OrderItem::getQuantity).sum();
+        return totalItems <= truck.getCapacity();
     }
 }
