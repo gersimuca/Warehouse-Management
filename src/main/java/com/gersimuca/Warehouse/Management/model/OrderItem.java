@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "order_item")
 public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
@@ -25,5 +27,6 @@ public class OrderItem {
     @JoinColumn(name = "item_id")
     private Item item;
 
+    @Column(name = "quantity")
     private int quantity;
 }

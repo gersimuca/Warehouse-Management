@@ -23,10 +23,6 @@ public enum Role {
     ),
     SYSTEM_ADMIN(
             Set.of(
-                    Permission.WAREHOUSE_MANAGER_READ,
-                    Permission.WAREHOUSE_MANAGER_UPDATE,
-                    Permission.WAREHOUSE_MANAGER_DELETE,
-                    Permission.WAREHOUSE_MANAGER_CREATE,
                     Permission.SYSTEM_ADMIN_READ,
                     Permission.SYSTEM_ADMIN_CREATE,
                     Permission.SYSTEM_ADMIN_UPDATE,

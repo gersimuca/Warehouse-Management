@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -22,6 +23,7 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebSecurity
 @Configuration
 @RequiredArgsConstructor
+@EnableMethodSecurity
 public class WebSecurityConfig {
 
     private static final String[] WHITE_LIST_URL = {
@@ -48,11 +50,17 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(WHITE_LIST_URL)
                                 .permitAll()
-                                .requestMatchers("/api/v1/management/**").hasAnyRole(SYSTEM_ADMIN.name(), WAREHOUSE_MANAGER.name())
-                                .requestMatchers(GET, "/api/v1/management/**").hasAnyAuthority(SYSTEM_ADMIN_READ.name(), WAREHOUSE_MANAGER_READ.name())
-                                .requestMatchers(POST, "/api/v1/management/**").hasAnyAuthority(SYSTEM_ADMIN_CREATE.name(), WAREHOUSE_MANAGER_CREATE.name())
-                                .requestMatchers(PUT, "/api/v1/management/**").hasAnyAuthority(SYSTEM_ADMIN_UPDATE.name(), WAREHOUSE_MANAGER_UPDATE.name())
-                                .requestMatchers(DELETE, "/api/v1/management/**").hasAnyAuthority(SYSTEM_ADMIN_DELETE.name(), WAREHOUSE_MANAGER_DELETE.name())
+                                .requestMatchers("**/api/v1/management/**").hasAnyRole(WAREHOUSE_MANAGER.name())
+                                .requestMatchers(GET, "**/api/v1/management/**").hasAnyAuthority(WAREHOUSE_MANAGER_READ.name())
+                                .requestMatchers(POST, "**/api/v1/management/**").hasAnyAuthority(WAREHOUSE_MANAGER_CREATE.name())
+                                .requestMatchers(PUT, "**/api/v1/management/**").hasAnyAuthority(WAREHOUSE_MANAGER_UPDATE.name())
+                                .requestMatchers(DELETE, "**/api/v1/management/**").hasAnyAuthority(WAREHOUSE_MANAGER_DELETE.name())
+
+                                .requestMatchers("**/api/v1/system/admin/**").hasAnyRole(SYSTEM_ADMIN.name())
+                                .requestMatchers(GET, "**/api/v1/system/admin/**").hasAnyAuthority(SYSTEM_ADMIN_READ.name())
+                                .requestMatchers(POST, "**/api/v1/system/admin/**").hasAnyAuthority(SYSTEM_ADMIN_CREATE.name())
+                                .requestMatchers(PUT, "**/api/v1/system/admin/**").hasAnyAuthority(SYSTEM_ADMIN_UPDATE.name())
+                                .requestMatchers(DELETE, "**/api/v1/system/admin/**").hasAnyAuthority(SYSTEM_ADMIN_DELETE.name())
                                 .anyRequest()
                                 .authenticated()
                 )

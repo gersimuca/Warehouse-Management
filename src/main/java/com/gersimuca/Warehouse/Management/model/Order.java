@@ -16,18 +16,26 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "order")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Long orderId;
 
+    @Column(name = "submitted_date")
     private LocalDate submittedDate;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private Status status;
 
+    @Column(name = "deadline_date")
     private LocalDate deadlineDate;
+
+    @Column(name = "decline_reason")
+    private String declineReason;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
