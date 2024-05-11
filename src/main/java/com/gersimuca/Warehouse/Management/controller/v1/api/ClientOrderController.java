@@ -3,6 +3,7 @@ package com.gersimuca.Warehouse.Management.controller.v1.api;
 import com.gersimuca.Warehouse.Management.domain.Response;
 import com.gersimuca.Warehouse.Management.dto.request.ItemRequest;
 import com.gersimuca.Warehouse.Management.dto.request.OrderRequest;
+import com.gersimuca.Warehouse.Management.enumeration.Status;
 import com.gersimuca.Warehouse.Management.service.OrderService;
 import com.gersimuca.Warehouse.Management.util.request.RequestUtil;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -17,8 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.security.Principal;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.apache.logging.log4j.core.config.plugins.Plugin.EMPTY;
 
@@ -87,4 +90,28 @@ public class ClientOrderController {
         Response responseBody = RequestUtil.getResponse(request, Collections.emptyMap(), successMessage, EMPTY, HttpStatus.OK);
         return ResponseEntity.ok().body(responseBody);
     }
+
+    @GetMapping("/{username}")
+    public ResponseEntity<Response> getOrdersById(@PathVariable String username, HttpServletRequest request) {
+        Map<?, ?> data = orderService.getOrdersByUsername(username);
+        String successMessage = "Orders retrieved successfully!";
+        Response responseBody = RequestUtil.getResponse(request, data, successMessage, "", HttpStatus.OK);
+
+        logger.info("Orders retrieved by user: {}", data.size());
+
+        return ResponseEntity.ok().body(responseBody);
+    }
+
+    @GetMapping("/{username}/status")
+    public ResponseEntity<Response> getOrdersByUsernameAndStatus(@PathVariable String username, @RequestParam("status") Status status, HttpServletRequest request) {
+        Map<?, ?> data = orderService.getOrdersByUserByStatus(username, status);
+        String successMessage = "Orders retrieved successfully!";
+        Response responseBody = RequestUtil.getResponse(request, data, successMessage, "", HttpStatus.OK);
+
+        logger.info("Orders retrieved by user: {} by status", data.size());
+
+        return ResponseEntity.ok().body(responseBody);
+    }
+
+
 }

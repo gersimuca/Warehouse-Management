@@ -2,6 +2,7 @@ package com.gersimuca.Warehouse.Management.repository;
 
 import com.gersimuca.Warehouse.Management.enumeration.Status;
 import com.gersimuca.Warehouse.Management.model.Order;
+import com.gersimuca.Warehouse.Management.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,4 +20,9 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     void updateOrderStatus(@Param("orderId") Long orderId, @Param("newStatus") String newStatus, @Param("currentStatus") String currentStatus);
 
     Optional<List<Order>> findByStatusOrderBySubmittedDateDesc(Status status);
+
+    Optional<List<Order>> findByUser(User user);
+
+    Optional<List<Order>> findByUserAndStatus(User user, Status status);
+
 }
