@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:00:46 +0200] "POST /rest-api/api/v1/login HTTP/1.1" 201 314
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:01:03 +0200] "PUT /rest-api/api/v1/management/orders/1/approve HTTP/1.1" 200 171
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:01:20 +0200] "POST /rest-api/api/v1/management/deliveries/schedule HTTP/1.1" 500 210
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:02:14 +0200] "POST /rest-api/api/v1/client/orders HTTP/1.1" 500 5136
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:02:23 +0200] "POST /rest-api/api/v1/login HTTP/1.1" 201 314
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:02:50 +0200] "POST /rest-api/api/v1/client/orders HTTP/1.1" 201 161
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:03:11 +0200] "PUT /rest-api/api/v1/client/orders/1/submit HTTP/1.1" 200 167
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:04:11 +0200] "PUT /rest-api/api/v1/client/orders/1/submit HTTP/1.1" 200 167
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:04:27 +0200] "PUT /rest-api/api/v1/management/orders/1/approve HTTP/1.1" 200 171
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:04:34 +0200] "POST /rest-api/api/v1/management/deliveries/schedule HTTP/1.1" 401 17
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:04:38 +0200] "POST /rest-api/api/v1/management/deliveries/schedule HTTP/1.1" 500 319
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:05:13 +0200] "POST /rest-api/api/v1/management/trucks HTTP/1.1" 401 17
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:05:17 +0200] "POST /rest-api/api/v1/management/trucks HTTP/1.1" 201 160
+0:0:0:0:0:0:0:1 - - [12/May/2024:00:05:23 +0200] "POST /rest-api/api/v1/management/deliveries/schedule HTTP/1.1" 201 183

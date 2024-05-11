@@ -58,6 +58,7 @@ public class TruckService {
     @TrackExecutionTime
     public void createTruck(TruckRequest truckRequest) {
         try {
+            if(truckRequest.getCapacity() > 10) throw new ServiceException("Truck capacity can never exceed 10");
             truckRepository.save(TruckUtil.createTruck(truckRequest.getChassisNumber(), truckRequest.getLicensePlate(), truckRequest.getCapacity()));
         } catch (Exception e) {
             log.error("Error occurred while creating truck: {}", e.getMessage());
@@ -72,6 +73,8 @@ public class TruckService {
             Truck truck = truckRepository.findByChassisNumber(chassisNumber)
                     .orElseThrow(() -> new ServiceException("Truck not found"));
             truckRepository.delete(truck);
+
+            if(truckRequest.getCapacity() > 10) throw new ServiceException("Truck capacity can never exceed 10");
 
             truck = TruckUtil.createTruck(truckRequest.getChassisNumber(), truckRequest.getLicensePlate(), truckRequest.getCapacity());
 

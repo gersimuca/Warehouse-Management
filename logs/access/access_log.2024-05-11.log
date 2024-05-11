@@ -526,3 +526,13 @@
 0:0:0:0:0:0:0:1 - - [11/May/2024:23:45:56 +0200] "GET /rest-api/api/v1/client/orders/gersi/status?status=AWAITING_APPROVAL HTTP/1.1" 500 208
 0:0:0:0:0:0:0:1 - - [11/May/2024:23:46:01 +0200] "POST /rest-api/api/v1/login HTTP/1.1" 201 312
 0:0:0:0:0:0:0:1 - - [11/May/2024:23:46:09 +0200] "GET /rest-api/api/v1/client/orders/gersi/status?status=AWAITING_APPROVAL HTTP/1.1" 500 208
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:47:21 +0200] "POST /rest-api/api/v1/register HTTP/1.1" 201 317
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:47:36 +0200] "GET /rest-api/api/v1/client/orders/gersi/status?status=AWAITING_APPROVAL HTTP/1.1" 200 195
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:47:53 +0200] "POST /rest-api/api/v1/client/orders HTTP/1.1" 201 161
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:47:54 +0200] "POST /rest-api/api/v1/client/orders HTTP/1.1" 201 161
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:47:54 +0200] "POST /rest-api/api/v1/client/orders HTTP/1.1" 201 161
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:48:00 +0200] "PUT /rest-api/api/v1/client/orders/1/cancel HTTP/1.1" 500 224
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:49:07 +0200] "PUT /rest-api/api/v1/client/orders/1/submit HTTP/1.1" 200 167
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:49:16 +0200] "GET /rest-api/api/v1/client/orders/gersi HTTP/1.1" 200 326
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:49:26 +0200] "GET /rest-api/api/v1/client/orders/gersi/status?status=AWAITING_APPROVAL HTTP/1.1" 200 266
+0:0:0:0:0:0:0:1 - - [11/May/2024:23:49:33 +0200] "GET /rest-api/api/v1/client/orders/gersi HTTP/1.1" 200 326

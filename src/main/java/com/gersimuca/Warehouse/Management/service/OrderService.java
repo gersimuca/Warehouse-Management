@@ -221,6 +221,38 @@ public class OrderService {
         }
     }
 
+    @TrackExecutionTime
+    public Map<String, Object> getOrdersByUsername(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new ServiceException("User not found"));
+        List<Order> orders = orderRepository.findByUser(user)
+                .orElseThrow(() -> new ServiceException("Orders not found"));
+
+        List<OrderDto> orderDtos = orders.stream()
+                .map(order -> new OrderDtoMapper().apply(order))
+                .toList();
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("orders", List.of(orderDtos));
+        return data;
+    }
+
+    @TrackExecutionTime
+    public Map<String, Object> getOrdersByUserByStatus(String username, Status status) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new ServiceException("User not found"));
+        List<Order> orders = orderRepository.findByUserAndStatus(user, status)
+                .orElseThrow(() -> new ServiceException("Orders not found"));
+
+        List<OrderDto> orderDtos = orders.stream()
+                .map(order -> new OrderDtoMapper().apply(order))
+                .toList();
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("orders", List.of(orderDtos));
+        return data;
+    }
+
     private boolean isQuantityAvailable(List<ItemRequest> itemRequestList){
         for (ItemRequest item : itemRequestList) {
             Integer availableQuantity = itemRepository.findQuantityById(item.getItemId());
@@ -239,33 +271,5 @@ public class OrderService {
         return itemIds;
     }
 
-    public Map<String, Object> getOrdersByUsername(String username) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new ServiceException("User not found"));
-        List<Order> orders = orderRepository.findByUser(user)
-                .orElseThrow(() -> new ServiceException("Orders not found"));
 
-        List<OrderDto> orderDtos = orders.stream()
-                .map(order -> new OrderDtoMapper().apply(order))
-                .toList();
-
-        Map<String, Object> data = new HashMap<>();
-        data.put("orders", List.of(orderDtos));
-        return data;
-    }
-
-    public Map<String, Object> getOrdersByUserByStatus(String username, Status status) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new ServiceException("User not found"));
-        List<Order> orders = orderRepository.findByUserAndStatus(user, status)
-                .orElseThrow(() -> new ServiceException("Orders not found"));
-
-        List<OrderDto> orderDtos = orders.stream()
-                .map(order -> new OrderDtoMapper().apply(order))
-                .toList();
-
-        Map<String, Object> data = new HashMap<>();
-        data.put("orders", List.of(orderDtos));
-        return data;
-    }
 }
