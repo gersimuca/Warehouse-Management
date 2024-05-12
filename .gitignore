@@ -23,6 +23,26 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/logs/
+/web/logs/documentum/
+/web/documentum/
+/documentum/
+/trace.log
+log4j.log
+/web/logs/vd-test.log
+/web/trace.log
+/web/logs/*
+/data-dfc-dir/
+/tmp/
+/web/tmp/
+/web/logs/
+
 
 ### VS Code ###
 .vscode/
