@@ -6,9 +6,9 @@ services:
     image: postgres:16.2
     restart: always
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-pgi}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pgi}
-      POSTGRES_DB: ${POSTGRES_DB:-docdatabase}
+      POSTGRES_USER: ${POSTGRES_USER:-gersi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gersi}
+      POSTGRES_DB: ${POSTGRES_DB:-warehouse_management}
     expose:
       - "5432"
     ports:
@@ -29,8 +29,8 @@ services:
     image: dpage/pgadmin4:8.5
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-pgi@planetgroupint.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-pgi}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-gersimuca@aol.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-gersimuca}
       PGADMIN_DEFAULT_ADDRESS: 6000
       PGADMIN_LISTEN_PORT: 6000
     expose:

@@ -7,7 +7,6 @@ import lombok.*;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthenticationRequest {
-
     private String username;
     String password;
 }
