@@ -2,6 +2,8 @@ package com.gersimuca.Warehouse.Management.service;
 
 import com.gersimuca.Warehouse.Management.dto.request.TruckRequest;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
+import com.gersimuca.Warehouse.Management.exception.TruckException;
+import com.gersimuca.Warehouse.Management.exception.UserException;
 import com.gersimuca.Warehouse.Management.model.Truck;
 import com.gersimuca.Warehouse.Management.repository.TruckRepository;
 import com.gersimuca.Warehouse.Management.util.TruckUtil;
@@ -9,6 +11,7 @@ import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +33,14 @@ public class TruckService {
     public Map<String, Object> getAllTrucks() {
         try {
             List<Truck> trucks = Optional.of(truckRepository.findAll())
-                    .orElseThrow(() -> new ServiceException("Trucks not found"));
+                    .orElseThrow(() -> {
+                        String message = "Trucks not found";
+                        Throwable cause = new TruckException("Trucks not found");
+                        HttpStatus status = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Trucks not found";
+                        boolean trace = true;
+                        return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                    });
             Map<String, Object> data = new HashMap<>();
             data.put("trucks", List.of(trucks));
             return data;
@@ -44,7 +54,14 @@ public class TruckService {
     public Map<String, Object> getTruckByChassisNumber(String chassisNumber) {
         try {
             Truck truck = truckRepository.findByChassisNumber(chassisNumber)
-                    .orElseThrow(() -> new ServiceException("Truck not found"));
+                    .orElseThrow(() -> {
+                        String message = "Truck not found";
+                        Throwable cause = new TruckException("Truck not found");
+                        HttpStatus status = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Truck not found by chassis number " + chassisNumber;
+                        boolean trace = true;
+                        return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                    });
 
             Map<String, Object> data = new HashMap<>();
             data.put("truck", truck);
@@ -71,10 +88,24 @@ public class TruckService {
     public void updateTruck(String chassisNumber, TruckRequest truckRequest) {
         try {
             Truck truck = truckRepository.findByChassisNumber(chassisNumber)
-                    .orElseThrow(() -> new ServiceException("Truck not found"));
+                    .orElseThrow(() -> {
+                        String message = "Truck not found";
+                        Throwable cause = new TruckException("Truck not found");
+                        HttpStatus status = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Truck not found by chassis number " + chassisNumber;
+                        boolean trace = true;
+                        return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                    });
             truckRepository.delete(truck);
 
-            if(truckRequest.getCapacity() > 10) throw new ServiceException("Truck capacity can never exceed 10");
+            if(truckRequest.getCapacity() > 10) {
+                String message = "Truck cannot exceed capacity of 10";
+                Throwable cause = new TruckException("Truck cannot exceed capacity of 10");
+                HttpStatus status = HttpStatus.BAD_REQUEST;
+                String errorDetailMessage = "Truck cannot exceed capacity of 10, this truck with chassis:" + chassisNumber;
+                boolean trace = true;
+                throw new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+            }
 
             truck = TruckUtil.createTruck(truckRequest.getChassisNumber(), truckRequest.getLicensePlate(), truckRequest.getCapacity());
 
@@ -89,7 +120,14 @@ public class TruckService {
     public void deleteTruck(String chassisNumber) {
         try {
             Truck truck = truckRepository.findByChassisNumber(chassisNumber)
-                    .orElseThrow(() -> new ServiceException("Truck not found"));
+                    .orElseThrow(() -> {
+                        String message = "Truck not found";
+                        Throwable cause = new TruckException("Truck not found");
+                        HttpStatus status = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Truck not found by chassis number " + chassisNumber;
+                        boolean trace = true;
+                        return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                    });
             truckRepository.delete(truck);
         } catch (Exception e) {
             log.error("Error occurred while deleting truck: {}", e.getMessage());

@@ -4,6 +4,7 @@ import com.gersimuca.Warehouse.Management.dto.request.AuthenticationRequest;
 import com.gersimuca.Warehouse.Management.dto.request.RegisterRequest;
 import com.gersimuca.Warehouse.Management.enumeration.Role;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
+import com.gersimuca.Warehouse.Management.exception.UserException;
 import com.gersimuca.Warehouse.Management.model.Token;
 import com.gersimuca.Warehouse.Management.model.User;
 import com.gersimuca.Warehouse.Management.repository.TokenRepository;
@@ -15,6 +16,7 @@ import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,10 +24,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -47,7 +46,14 @@ public class AuthenticationService {
         Optional<User> userExist = userRepository.findByUsername(request.getUsername());
         if(userExist.isPresent()) {
             logger.warn("User {} already exists", request.getUsername());
-            throw new ServiceException("User already exist");
+
+            String message = "user already exist";
+            Throwable cause = new UserException("Existing User can not be register");
+            HttpStatus status = HttpStatus.CONFLICT;
+            String errorDetailMessage = userExist.get().getUsername() + " already exists";
+            boolean trace = true;
+
+            throw new ServiceException(message, cause, status, null, errorDetailMessage, trace);
         }
 
         User user = UserUtil.saveUser(request.getUsername(), passwordEncoder.encode(request.getPassword()), request.getRole() != null ? request.getRole() : Role.CLIENT);

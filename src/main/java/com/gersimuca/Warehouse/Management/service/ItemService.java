@@ -1,6 +1,7 @@
 package com.gersimuca.Warehouse.Management.service;
 
 import com.gersimuca.Warehouse.Management.dto.request.ItemRequest;
+import com.gersimuca.Warehouse.Management.exception.ItemException;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
 import com.gersimuca.Warehouse.Management.model.Item;
 import com.gersimuca.Warehouse.Management.repository.ItemRepository;
@@ -9,6 +10,7 @@ import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -29,7 +31,13 @@ public class ItemService {
         List<Item> items = Optional.of(itemRepository.findAll())
                 .orElseThrow(() -> {
                     logger.error("Items not found");
-                    return new ServiceException("Items not found");
+
+                    String message = "Item not found";
+                    Throwable cause = new ItemException("Item not found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "No Items on records";
+                    boolean trace = true;
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
                 });
         Map<String, Object> data = new HashMap<>();
         data.put("items", List.of(items));
@@ -41,7 +49,13 @@ public class ItemService {
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Item not found");
-                    return new ServiceException("Item not found");
+
+                    String message = "Item not found";
+                    Throwable cause = new ItemException("Item not found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "No Item found by " + id;
+                    boolean trace = true;
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
                 });
 
         Map<String, Object> data = new HashMap<>();
@@ -59,7 +73,15 @@ public class ItemService {
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Item not found");
-                    return new ServiceException("Item not found");
+
+                    String message = "Item not found";
+                    Throwable cause = new ItemException("Item not found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    Map<String, Object> params = new HashMap<>();
+                    String errorDetailMessage = "No Item found by " + id;
+                    boolean trace = true;
+
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
                 });
 
         item.setItemName(updatedItem.getName());
@@ -74,7 +96,14 @@ public class ItemService {
         Item item = itemRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Item not found");
-                    return new ServiceException("Item not found");
+
+                    String message = "Item not found";
+                    Throwable cause = new ItemException("Item not found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "No Item found by " + id;
+                    boolean trace = true;
+
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
                 });
         itemRepository.delete(item);
     }

@@ -1,5 +1,6 @@
 package com.gersimuca.Warehouse.Management.security.filter;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gersimuca.Warehouse.Management.repository.TokenRepository;
 import com.gersimuca.Warehouse.Management.security.provider.JwtService;
 import jakarta.servlet.FilterChain;
@@ -8,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import org.json.JSONObject;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +19,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
@@ -69,6 +73,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private void handleInvalidToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        response.getWriter().write("Invalid JWT token");
+
+        Map<String, String> data = new HashMap<>();
+        data.put("error", "Unauthorized");
+        data.put("message", "Invalid JWT token");
+
+        JSONObject jsonObject = new JSONObject(data);
+
+        response.setContentType("application/json");
+        response.getWriter().write(jsonObject.toString());
     }
+
 }

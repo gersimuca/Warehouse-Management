@@ -5,7 +5,10 @@ import com.gersimuca.Warehouse.Management.dto.mapper.OrderDtoMapper;
 import com.gersimuca.Warehouse.Management.dto.request.ItemRequest;
 import com.gersimuca.Warehouse.Management.dto.request.OrderRequest;
 import com.gersimuca.Warehouse.Management.enumeration.Status;
+import com.gersimuca.Warehouse.Management.exception.ItemException;
+import com.gersimuca.Warehouse.Management.exception.OrderException;
 import com.gersimuca.Warehouse.Management.exception.ServiceException;
+import com.gersimuca.Warehouse.Management.exception.UserException;
 import com.gersimuca.Warehouse.Management.model.Item;
 import com.gersimuca.Warehouse.Management.model.Order;
 import com.gersimuca.Warehouse.Management.model.OrderItem;
@@ -21,11 +24,11 @@ import com.gersimuca.Warehouse.Management.util.metrics.TrackExecutionTime;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.security.Principal;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -50,14 +53,29 @@ public class OrderService {
             if(!isQuantityAvailable) throw new ServiceException("Cannot create order quantity too big");
 
             String username = jwtService.extractUsername(jwt);
-            User user = userRepository.findByUsername(username).orElseThrow(()-> new ServiceException("User not found"));
+            User user = userRepository.findByUsername(username).orElseThrow(()-> {
+                String message = "User not found";
+                Throwable cause = new UserException("User not found");
+                HttpStatus status = HttpStatus.BAD_REQUEST;
+                String errorDetailMessage = "User " + username + " not found";
+                boolean trace = true;
+                return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+            });
 
             Order order = OrderUtil.createOrder(Status.CREATED, LocalDate.now().plusDays(7), user);
             order = orderRepository.save(order);
 
             for(var itemRequest : itemRequestList){
                 Item item = itemRepository.findById(itemRequest.getItemId())
-                        .orElseThrow(() -> new ServiceException("Item not found"));
+                        .orElseThrow(() -> {
+                            String message = "Item not found";
+                            Throwable cause = new ItemException("Item not found");
+                            HttpStatus status = HttpStatus.BAD_REQUEST;
+                            String errorDetailMessage = "Item " + itemRequest.getItemId() + " not found";
+                            boolean trace = true;
+
+                            return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                        });
                 orderItemRepository.save(OrderItemUtil.createOrderItem(item, order, itemRequest.getQuantity() ));
             }
         } catch (Exception e) {
@@ -71,13 +89,27 @@ public class OrderService {
     public void updateOrder(Long id, OrderRequest orderRequest) {
         try {
             Set<Status> set = Set.of(CREATED, DECLINED);
-            Order order = orderRepository.findById(id).orElseThrow(()-> new ServiceException("Order not found"));
+            Order order = orderRepository.findById(id).orElseThrow(()-> {
+                String message = "Order not found";
+                Throwable cause = new OrderException("Order not found");
+                HttpStatus status = HttpStatus.BAD_REQUEST;
+                String errorDetailMessage = "Order " + id + " not found";
+                boolean trace = true;
+                return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+            });
 
             if(set.contains(orderRequest.getStatus())){
                 orderItemRepository.deleteOrderItemsByOrder(order);
 
                 boolean isQuantityAvailable = isQuantityAvailable(orderRequest.getItemRequestList());
-                if(!isQuantityAvailable) throw new ServiceException("Cannot create order quantity too big");
+                if(!isQuantityAvailable) {
+                    String message = "Order quantity too big";
+                    Throwable cause = new OrderException("Order quantity too big");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "Order " + id + " quantity too big to handle";
+                    boolean trace = true;
+                    throw new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                }
 
                 List<Item> items = itemRepository.findItemsByIds(extractItemIds(orderRequest.getItemRequestList()));
                 for(var item : items){
@@ -104,7 +136,13 @@ public class OrderService {
                 return;
             }
 
-            throw new ServiceException("Order under processing");
+            String message = "Order not found";
+            Throwable cause = new OrderException("Order under processing");
+            HttpStatus status = HttpStatus.CONFLICT;
+            String errorDetailMessage = "Order " + orderRequest + " not found";
+            boolean trace = true;
+
+            throw new ServiceException(message, cause, status, null, errorDetailMessage, trace);
         } catch (Exception e) {
             log.error("Error occurred while canceling order: {}", e.getMessage());
             throw e;
@@ -116,13 +154,28 @@ public class OrderService {
         try {
             Set<Status> set = Set.of(CREATED, DECLINED);
             if(set.contains(orderRequest.getStatus())){
-                Order order = orderRepository.findById(id).orElseThrow(()-> new ServiceException("Order not found"));
+                Order order = orderRepository.findById(id).orElseThrow(()-> {
+                    String message = "Order not found";
+                    Throwable cause = new OrderException("Order not found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "Order " + id + " not found";
+                    boolean trace = true;
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                });
+
                 order.setSubmittedDate(LocalDate.now());
                 order.setStatus(AWAITING_APPROVAL);
                 orderRepository.save(order);
                 return;
             }
-            throw new ServiceException("Order couldn't be submitted");
+
+            String message = "Order could not be submitted";
+            Throwable cause = new OrderException("Order could not be submitted");
+            HttpStatus status = HttpStatus.BAD_REQUEST;
+            String errorDetailMessage = "Order " + id + " could not be submitted";
+            boolean trace = true;
+
+            throw  new ServiceException(message, cause, status, null, errorDetailMessage, trace);
         } catch (Exception e) {
             log.error("Error occurred while submitting order: {}", e.getMessage());
             throw e;
@@ -133,7 +186,14 @@ public class OrderService {
     public Map<String, Object> getOrdersByStatus(Status status) {
         try {
             List<Order> orders = orderRepository.findByStatusOrderBySubmittedDateDesc(status)
-                    .orElseThrow(()-> new ServiceException("Orders couldn't be found"));
+                    .orElseThrow(()-> {
+                        String message = "Orders couldn't be found";
+                        Throwable cause = new OrderException("Orders couldn't be found");
+                        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Orders couldn't be found by status " + status;
+                        boolean trace = true;
+                        return new ServiceException(message, cause, httpStatus, null, errorDetailMessage, trace);
+                    });
 
             List<OrderDto> orderDtos = orders
                     .stream()
@@ -153,7 +213,15 @@ public class OrderService {
     public Map<String, Object> getOrderDetails(Long id) {
         try {
             Map<String,Object> data = new HashMap<>();
-            Order order = orderRepository.findById(id).orElseThrow(()-> new ServiceException("Order not found"));
+            Order order = orderRepository.findById(id).orElseThrow(()-> {
+                String message = "Orders couldn't be found";
+                Throwable cause = new OrderException("Orders couldn't be found");
+                HttpStatus status = HttpStatus.BAD_REQUEST;
+                String errorDetailMessage = "Orders couldn't be found by id " + id;
+                boolean trace = true;
+                return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+            });
+
             OrderDto orderDto = new OrderDtoMapper().apply(order);
             data.put("order", orderDto);
             return data;
@@ -201,7 +269,14 @@ public class OrderService {
     public void updateOrderToFulfilled(Long id) {
         try {
             Order order = orderRepository.findById(id)
-                    .orElseThrow(() -> new ServiceException("Order not found"));
+                    .orElseThrow(() -> {
+                        String message = "Orders couldn't be found";
+                        Throwable cause = new OrderException("Orders couldn't be found");
+                        HttpStatus status = HttpStatus.BAD_REQUEST;
+                        String errorDetailMessage = "Orders couldn't be found by id " + id;
+                        boolean trace = true;
+                        return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                    });
             order.setStatus(Status.FULFILLED);
             orderRepository.save(order);
 
@@ -210,7 +285,14 @@ public class OrderService {
                 quantiy -= orderItem.getQuantity();
 
                 Item item = itemRepository.findById(orderItem.getItem().getItemId())
-                        .orElseThrow(() -> new ServiceException("Item not found"));
+                        .orElseThrow(() -> {
+                            String message = "Item couldn't be found";
+                            Throwable cause = new ItemException("Item couldn't be found");
+                            HttpStatus status = HttpStatus.BAD_REQUEST;
+                            String errorDetailMessage = "Item couldn't be found by id " + orderItem.getItem().getItemId();
+                            boolean trace = true;
+                            return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                        });
                 item.setQuantity(quantiy);
 
                 itemRepository.save(item);
@@ -224,9 +306,24 @@ public class OrderService {
     @TrackExecutionTime
     public Map<String, Object> getOrdersByUsername(String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new ServiceException("User not found"));
+                .orElseThrow(() -> {
+                    String message = "User not found";
+                    Throwable cause = new UserException("User couldn't be found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "User couldn't be found by username " + username;
+                    boolean trace = true;
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                });
+
         List<Order> orders = orderRepository.findByUser(user)
-                .orElseThrow(() -> new ServiceException("Orders not found"));
+                .orElseThrow(() -> {
+                    String message = "Orders not found";
+                    Throwable cause = new OrderException("Orders couldn't be found");
+                    HttpStatus status = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "Orders couldn't be found by user " + username;
+                    boolean trace = true;
+                    return new ServiceException(message, cause, status, null, errorDetailMessage, trace);
+                });
 
         List<OrderDto> orderDtos = orders.stream()
                 .map(order -> new OrderDtoMapper().apply(order))
@@ -240,9 +337,23 @@ public class OrderService {
     @TrackExecutionTime
     public Map<String, Object> getOrdersByUserByStatus(String username, Status status) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new ServiceException("User not found"));
+                .orElseThrow(() -> {
+                    String message = "User not found";
+                    Throwable cause = new UserException("User couldn't be found");
+                    HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "User couldn't be found by username " + username;
+                    boolean trace = true;
+                    return new ServiceException(message, cause, httpStatus, null, errorDetailMessage, trace);
+                });
         List<Order> orders = orderRepository.findByUserAndStatus(user, status)
-                .orElseThrow(() -> new ServiceException("Orders not found"));
+                .orElseThrow(() -> {
+                    String message = "Order not found";
+                    Throwable cause = new UserException("Order couldn't be found");
+                    HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+                    String errorDetailMessage = "Order couldn't be found by username " + username + " and status " + status;
+                    boolean trace = true;
+                    return new ServiceException(message, cause, httpStatus, null, errorDetailMessage, trace);
+                });
 
         List<OrderDto> orderDtos = orders.stream()
                 .map(order -> new OrderDtoMapper().apply(order))
