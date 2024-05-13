@@ -171,3 +171,7 @@ spring:
 - **Servlet:** Configures servlet-related settings like multipart handling and JPA (Java Persistence API) configurations.
 
 These configuration files are essential for the proper functioning of the project application. Adjustments can be made to tailor the application to specific deployment environments or business requirements.
+
+## Additional Notes
+
+- Ensure the specified port (9943) is not in use by other services on your machine.
