@@ -21,6 +21,7 @@ public class WarehouseManagementApplication {
 		SpringApplication.run(WarehouseManagementApplication.class, args);
 	}
 
+
 	@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthenticationService authenticationService, ItemRepository itemRepository
@@ -31,14 +32,12 @@ public class WarehouseManagementApplication {
 					.password("admin")
 					.role(SYSTEM_ADMIN)
 					.build();
-			System.out.println("Admin token: " + authenticationService.register(admin));
 
 			var manager = RegisterRequest.builder()
 					.username("manager")
 					.password("123")
 					.role(WAREHOUSE_MANAGER)
 					.build();
-			System.out.println("Manager token: " + authenticationService.register(manager));
 
 			itemRepository.saveAll(List.of(
 					Item.builder().itemName("Laptop").quantity(10).unitPrice(1200.00).build(),
@@ -46,7 +45,12 @@ public class WarehouseManagementApplication {
 					Item.builder().itemName("Keyboard").quantity(10).unitPrice(40.00).build(),
 					Item.builder().itemName("Monitor").quantity(10).unitPrice(300.00).build()
 			));
+
+			System.out.println("Admin token: " + authenticationService.register(admin) +
+					"\nManager token: " + authenticationService.register(manager));
 		};
 	}
+
+
 
 }
