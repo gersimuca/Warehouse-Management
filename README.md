@@ -174,4 +174,4 @@ These configuration files are essential for the proper functioning of the projec
 
 ## Additional Notes
 
-- Ensure the specified port (9943) is not in use by other services on your machine.
+- Ensure the specified ports (9000, 9443) are not in use by other services on your machine.
